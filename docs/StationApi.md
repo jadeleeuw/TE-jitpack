@@ -1,14 +1,14 @@
 # StationApi
 
-All URIs are relative to *http://localhost:8080*
+All URIs are relative to *http://localhost:8080/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getRailwaysConnectedToStation**](StationApi.md#getRailwaysConnectedToStation) | **GET** /stations/{stationId}/railways | All railways on station
-[**getStation**](StationApi.md#getStation) | **GET** /stations/{stationId} | Station by id
+[**getStation**](StationApi.md#getStation) | **GET** /stations | Station by id
 [**getStationByName**](StationApi.md#getStationByName) | **GET** /stations/findbyname | Station by name
 [**getStationName**](StationApi.md#getStationName) | **GET** /stations/{stationId}/name | Name of station
-[**getStations**](StationApi.md#getStations) | **GET** /stations | All stations
+[**getStations**](StationApi.md#getStations) | **GET** /stations/all | All stations
 
 
 <a name="getRailwaysConnectedToStation"></a>

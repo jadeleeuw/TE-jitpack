@@ -1,8 +1,8 @@
-# openapi-java-client
+# railways
 
 Railways API Game!
 - API version: 1.0
-  - Build date: 2019-03-07T13:28:26.133495+01:00[Europe/Amsterdam]
+  - Build date: 2019-04-05T17:38:51.364752+02:00[Europe/Amsterdam]
 
 Find your way in the Tokyo railway system!
 
@@ -38,9 +38,9 @@ Add this dependency to your project's POM:
 
 ```xml
 <dependency>
-  <groupId>org.openapitools</groupId>
-  <artifactId>openapi-java-client</artifactId>
-  <version>1.0.0</version>
+  <groupId>TE.sdk</groupId>
+  <artifactId>railways</artifactId>
+  <version>v2.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -50,7 +50,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "org.openapitools:openapi-java-client:1.0.0"
+compile "TE.sdk:railways:v2.0"
 ```
 
 ### Others
@@ -63,7 +63,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/openapi-java-client-1.0.0.jar`
+* `target/railways-v2.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -108,7 +108,7 @@ public class DistanceApiExample {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://localhost:8080*
+All URIs are relative to *http://localhost:8080/api/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -117,13 +117,14 @@ Class | Method | HTTP request | Description
 *RailwayApi* | [**getRailway**](docs/RailwayApi.md#getRailway) | **GET** /railways/{railwayId} | Railway by id
 *RailwayApi* | [**getRailways**](docs/RailwayApi.md#getRailways) | **GET** /railways | All railways
 *RailwayApi* | [**getStationsOnRailway**](docs/RailwayApi.md#getStationsOnRailway) | **GET** /railways/{railwayId}/stations | All station on railway
+*RouteApi* | [**addRouteIdentifier**](docs/RouteApi.md#addRouteIdentifier) | **POST** /route/create | Route identifier
 *StationApi* | [**getRailwaysConnectedToStation**](docs/StationApi.md#getRailwaysConnectedToStation) | **GET** /stations/{stationId}/railways | All railways on station
-*StationApi* | [**getStation**](docs/StationApi.md#getStation) | **GET** /stations/{stationId} | Station by id
+*StationApi* | [**getStation**](docs/StationApi.md#getStation) | **GET** /stations | Station by id
 *StationApi* | [**getStationByName**](docs/StationApi.md#getStationByName) | **GET** /stations/findbyname | Station by name
 *StationApi* | [**getStationName**](docs/StationApi.md#getStationName) | **GET** /stations/{stationId}/name | Name of station
-*StationApi* | [**getStations**](docs/StationApi.md#getStations) | **GET** /stations | All stations
+*StationApi* | [**getStations**](docs/StationApi.md#getStations) | **GET** /stations/all | All stations
 *TaskApi* | [**getTask**](docs/TaskApi.md#getTask) | **GET** /task | Origin and destination station
-*TaskApi* | [**submit**](docs/TaskApi.md#submit) | **POST** /task/submit | Submit
+*TaskApi* | [**submit**](docs/TaskApi.md#submit) | **PUT** /task/submit | Submit
 
 
 ## Documentation for Models
@@ -143,7 +144,7 @@ Authentication schemes defined for the API:
 ### idKey
 
 - **Type**: API key
-- **API key parameter name**: x-id-key
+- **API key parameter name**: x-idkey
 - **Location**: HTTP header
 
 

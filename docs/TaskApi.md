@@ -1,11 +1,11 @@
 # TaskApi
 
-All URIs are relative to *http://localhost:8080*
+All URIs are relative to *http://localhost:8080/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getTask**](TaskApi.md#getTask) | **GET** /task | Origin and destination station
-[**submit**](TaskApi.md#submit) | **POST** /task/submit | Submit
+[**submit**](TaskApi.md#submit) | **PUT** /task/submit | Submit
 
 
 <a name="getTask"></a>

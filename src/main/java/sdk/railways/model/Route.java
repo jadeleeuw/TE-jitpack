@@ -26,10 +26,13 @@ import java.util.List;
 /**
  * Route
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-03-07T15:52:27.062333+01:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-05T17:38:51.364752+02:00[Europe/Amsterdam]")
 public class Route {
   @JsonProperty("stationsToSwitchTrain")
   private List<Integer> stationsToSwitchTrain = null;
+
+  @JsonProperty("routeId")
+  private String routeId;
 
   public Route stationsToSwitchTrain(List<Integer> stationsToSwitchTrain) {
     this.stationsToSwitchTrain = stationsToSwitchTrain;
@@ -57,6 +60,24 @@ public class Route {
     this.stationsToSwitchTrain = stationsToSwitchTrain;
   }
 
+  public Route routeId(String routeId) {
+    this.routeId = routeId;
+    return this;
+  }
+
+   /**
+   * Get routeId
+   * @return routeId
+  **/
+  @ApiModelProperty(value = "")
+  public String getRouteId() {
+    return routeId;
+  }
+
+  public void setRouteId(String routeId) {
+    this.routeId = routeId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -67,12 +88,13 @@ public class Route {
       return false;
     }
     Route route = (Route) o;
-    return Objects.equals(this.stationsToSwitchTrain, route.stationsToSwitchTrain);
+    return Objects.equals(this.stationsToSwitchTrain, route.stationsToSwitchTrain) &&
+        Objects.equals(this.routeId, route.routeId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(stationsToSwitchTrain);
+    return Objects.hash(stationsToSwitchTrain, routeId);
   }
 
 
@@ -82,6 +104,7 @@ public class Route {
     sb.append("class Route {\n");
     
     sb.append("    stationsToSwitchTrain: ").append(toIndentedString(stationsToSwitchTrain)).append("\n");
+    sb.append("    routeId: ").append(toIndentedString(routeId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

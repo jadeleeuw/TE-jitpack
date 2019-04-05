@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**origin** | **Integer** |  | 
-**destination** | **Integer** |  | 
+**start** | **Integer** |  | 
+**finish** | **Integer** |  | 
 
 
 

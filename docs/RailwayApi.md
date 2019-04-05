@@ -1,6 +1,6 @@
 # RailwayApi
 
-All URIs are relative to *http://localhost:8080*
+All URIs are relative to *http://localhost:8080/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -117,7 +117,7 @@ This endpoint does not need any parameter.
 
 <a name="getStationsOnRailway"></a>
 # **getStationsOnRailway**
-> List&lt;Integer&gt; getStationsOnRailway(railwayId)
+> Station getStationsOnRailway(railwayId)
 
 All station on railway
 
@@ -143,7 +143,7 @@ idKey.setApiKey("YOUR API KEY");
 RailwayApi apiInstance = new RailwayApi();
 Integer railwayId = 56; // Integer | The id of the railway.
 try {
-    List<Integer> result = apiInstance.getStationsOnRailway(railwayId);
+    Station result = apiInstance.getStationsOnRailway(railwayId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RailwayApi#getStationsOnRailway");
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;Integer&gt;**
+[**Station**](Station.md)
 
 ### Authorization
 

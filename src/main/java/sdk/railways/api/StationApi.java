@@ -25,7 +25,7 @@ import org.springframework.http.MediaType;
 import reactor.core.publisher.Mono;
 import reactor.core.publisher.Flux;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-03-07T15:52:27.062333+01:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-05T17:38:51.364752+02:00[Europe/Amsterdam]")
 public class StationApi {
     private ApiClient apiClient;
 
@@ -101,14 +101,13 @@ public class StationApi {
             throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'stationId' when calling getStation");
         }
         
-        // create path and map variables
-        final Map<String, Object> uriVariables = new HashMap<String, Object>();
-        uriVariables.put("stationId", stationId);
-        String path = UriComponentsBuilder.fromPath("/stations/{stationId}").buildAndExpand(uriVariables).toUriString();
+        String path = UriComponentsBuilder.fromPath("/stations").build().toUriString();
         
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
         final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
+        
+        queryParams.putAll(apiClient.parameterToMultiValueMap(null, "station_id", stationId));
 
         final String[] accepts = { 
             "application/json"
@@ -207,7 +206,7 @@ public class StationApi {
     public Flux<Integer> getStations() throws HttpClientErrorException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/stations").build().toUriString();
+        String path = UriComponentsBuilder.fromPath("/stations/all").build().toUriString();
         
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
