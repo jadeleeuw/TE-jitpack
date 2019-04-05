@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * Railway
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-03-07T15:52:27.062333+01:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-05T17:49:41.427643+02:00[Europe/Amsterdam]")
 public class Railway {
   @JsonProperty("id")
   private Integer id;

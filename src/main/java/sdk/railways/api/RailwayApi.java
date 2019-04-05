@@ -3,6 +3,7 @@ package sdk.railways.api;
 import sdk.railways.ApiClient;
 
 import sdk.railways.model.Railway;
+import sdk.railways.model.Station;
 
 import java.util.HashMap;
 import java.util.List;
@@ -24,7 +25,7 @@ import org.springframework.http.MediaType;
 import reactor.core.publisher.Mono;
 import reactor.core.publisher.Flux;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-03-07T15:52:27.062333+01:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-05T17:49:41.427643+02:00[Europe/Amsterdam]")
 public class RailwayApi {
     private ApiClient apiClient;
 
@@ -118,10 +119,10 @@ public class RailwayApi {
      * <p><b>200</b> - All station ids connected to the railway.
      * <p><b>404</b> - The railway with the given id could not be found.
      * @param railwayId The id of the railway.
-     * @return List&lt;Integer&gt;
+     * @return Station
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public Flux<Integer> getStationsOnRailway(Integer railwayId) throws HttpClientErrorException {
+    public Mono<Station> getStationsOnRailway(Integer railwayId) throws HttpClientErrorException {
         Object postBody = null;
         
         // verify the required parameter 'railwayId' is set
@@ -147,7 +148,7 @@ public class RailwayApi {
 
         String[] authNames = new String[] { "idKey" };
 
-        ParameterizedTypeReference<Integer> returnType = new ParameterizedTypeReference<Integer>() {};
-        return apiClient.invokeFluxAPI(path, HttpMethod.GET, queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+        ParameterizedTypeReference<Station> returnType = new ParameterizedTypeReference<Station>() {};
+        return apiClient.invokeAPI(path, HttpMethod.GET, queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     }
 }

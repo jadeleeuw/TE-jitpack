@@ -24,48 +24,48 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Task
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-03-07T15:52:27.062333+01:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-05T17:49:41.427643+02:00[Europe/Amsterdam]")
 public class Task {
-  @JsonProperty("origin")
-  private Integer origin;
+  @JsonProperty("start")
+  private Integer start;
 
-  @JsonProperty("destination")
-  private Integer destination;
+  @JsonProperty("finish")
+  private Integer finish;
 
-  public Task origin(Integer origin) {
-    this.origin = origin;
+  public Task start(Integer start) {
+    this.start = start;
     return this;
   }
 
    /**
-   * Get origin
-   * @return origin
+   * Get start
+   * @return start
   **/
   @ApiModelProperty(required = true, value = "")
-  public Integer getOrigin() {
-    return origin;
+  public Integer getStart() {
+    return start;
   }
 
-  public void setOrigin(Integer origin) {
-    this.origin = origin;
+  public void setStart(Integer start) {
+    this.start = start;
   }
 
-  public Task destination(Integer destination) {
-    this.destination = destination;
+  public Task finish(Integer finish) {
+    this.finish = finish;
     return this;
   }
 
    /**
-   * Get destination
-   * @return destination
+   * Get finish
+   * @return finish
   **/
   @ApiModelProperty(required = true, value = "")
-  public Integer getDestination() {
-    return destination;
+  public Integer getFinish() {
+    return finish;
   }
 
-  public void setDestination(Integer destination) {
-    this.destination = destination;
+  public void setFinish(Integer finish) {
+    this.finish = finish;
   }
 
 
@@ -78,13 +78,13 @@ public class Task {
       return false;
     }
     Task task = (Task) o;
-    return Objects.equals(this.origin, task.origin) &&
-        Objects.equals(this.destination, task.destination);
+    return Objects.equals(this.start, task.start) &&
+        Objects.equals(this.finish, task.finish);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(origin, destination);
+    return Objects.hash(start, finish);
   }
 
 
@@ -93,8 +93,8 @@ public class Task {
     StringBuilder sb = new StringBuilder();
     sb.append("class Task {\n");
     
-    sb.append("    origin: ").append(toIndentedString(origin)).append("\n");
-    sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
+    sb.append("    start: ").append(toIndentedString(start)).append("\n");
+    sb.append("    finish: ").append(toIndentedString(finish)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -62,7 +62,7 @@ import sdk.railways.auth.HttpBasicAuth;
 import sdk.railways.auth.ApiKeyAuth;
 import sdk.railways.auth.OAuth;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-03-07T15:52:27.062333+01:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-05T17:49:41.427643+02:00[Europe/Amsterdam]")
 public class ApiClient {
     public enum CollectionFormat {
         CSV(","), TSV("\t"), SSV(" "), PIPES("|"), MULTI(null);
@@ -79,7 +79,7 @@ public class ApiClient {
 
     private HttpHeaders defaultHeaders = new HttpHeaders();
 
-    private String basePath = "http://localhost:8080";
+    private String basePath = "http://localhost:8080/api/v2";
 
     private final WebClient webClient;
     private final DateFormat dateFormat;
@@ -116,7 +116,7 @@ public class ApiClient {
     protected void init() {
         // Setup authentications (key: authentication name, value: authentication).
         authentications = new HashMap<String, Authentication>();
-        authentications.put("idKey", new ApiKeyAuth("header", "x-id-key"));
+        authentications.put("idKey", new ApiKeyAuth("header", "x-idkey"));
         // Prevent the authentications from being modified.
         authentications = Collections.unmodifiableMap(authentications);
     }
