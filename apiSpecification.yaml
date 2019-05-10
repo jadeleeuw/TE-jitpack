@@ -1,0 +1,435 @@
+openapi: 3.0.0
+
+info:
+  title: Railways API Game!
+  description: Find your way in the Tokyo railway system!
+  version: 1.0
+
+servers:
+- url: http://localhost:8080
+  description: Main server
+
+paths:
+
+  ##### RAILWAYS #####
+  /railways:
+    get:
+      summary: All railways
+      description: Returns all railways on the map.
+      operationId: getRailways
+      tags:
+      - RAILWAY
+      responses:
+        '200':
+          description: The ids of all railways on the map.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: integer
+                example: [11321, 11328, 11333, 21001]
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+
+  /railways/{railwayId}:
+    get:
+      summary: Railway by id
+      description: Returns the railway with the given id.
+      operationId: getRailway
+      tags:
+      - RAILWAY
+      parameters:
+      - in: path
+        name: railwayId
+        required: true
+        description: The id of the railway.
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: The railway with the given id.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Railway'
+        '404':
+          description: The railway with the given id could not be found.
+
+  /railways/{railwayId}/stations:
+    get:
+      summary: All station on railway
+      description: Returns the ids of all stations connected to the given railway.
+      operationId: getStationsOnRailway
+      tags:
+      - RAILWAY
+      parameters:
+      - in: path
+        name: railwayId
+        required: true
+        description: The id of the railway.
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: All station ids connected to the railway.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: integer
+                example: [2600319, 2600307, 2600408]
+        '404':
+          description: The railway with the given id could not be found.
+
+  ##### STATIONS #####
+
+  /stations:
+    get:
+      summary: All stations
+      description: Returns all stations on the map.
+      operationId: getStations
+      tags:
+      - STATION
+      responses:
+        '200':
+          description: The ids of all stations on the map.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: integer
+                example: [2600319, 2600307, 2600408]
+
+  /stations/findbyname:
+    get:
+      summary: Station by name
+      description: Returns the station with the given name.
+      operationId: getStationByName
+      tags:
+      - STATION
+      parameters:
+      - in: query
+        name: name
+        description: The name of the station to be found.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: The station with the given name.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Station'
+        '404':
+          description: The station with the given name could not be found.
+
+  /stations/{stationId}:
+    get:
+      summary: Station by id
+      description: Returns a station with the given id.
+      operationId: getStation
+      tags:
+      - STATION
+      parameters:
+      - in: path
+        name: stationId
+        description: The id of the station.
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: The station with the given id.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Station'
+        '404':
+          description: The station with the given id could not be found.
+
+  /stations/{stationId}/name:
+    get:
+      summary: Name of station
+      description: Gets the name of the station with the given id.
+      operationId: getStationName
+      tags:
+      - STATION
+      parameters:
+      - in: path
+        name: stationId
+        description: The id of the station.
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: The name of the station with the given id.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NameResponse'
+        '404':
+          description: The station with the given id could not be found.
+
+  /stations/{stationId}/railways:
+    get:
+      summary: All railways on station
+      description: Returns the ids of all railways connected to the given station.
+      operationId: getRailwaysConnectedToStation
+      tags:
+      - STATION
+      parameters:
+      - in: path
+        name: stationId
+        description: The id of the station.
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: All railway ids connected to the given station.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: integer
+                example: [11332, 26004, 99337]
+        '404':
+          description: The station with the given id could not be found.
+
+  ##### DISTANCE API #####
+
+  /distance/stations:
+    get:
+      summary: Distance between stations
+      description: Returns the distance (in meters) between two stations.
+      operationId: getDistanceBetweenStations
+      tags:
+      - DISTANCE
+      parameters:
+      - in: query
+        name: from
+        description: The id of the first station
+        required: true
+        schema:
+          type: integer
+          example: 2600319
+      - in: query
+        name: to
+        description: The id of the other station
+        required: true
+        schema:
+          type: integer
+          example: 2600307
+      responses:
+        '200':
+          description: Distance (in meters) between the two stations.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DistanceResponse'
+        '404':
+          description: Unable to find (one of) the stations.
+
+  /distance/route:
+    post:
+      summary: Distance of route
+      description: Returns the total distance of the route in meters.
+      operationId: getDistanceOfRoute
+      tags:
+      - DISTANCE
+      requestBody:
+        description: The route of which the distance needs to be calculated.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Route'
+      responses:
+        '200':
+          description: Total distance (in meters) of the route.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DistanceResponse'
+        '400':
+          description: The given route is empty.
+
+  ##### TASKS #####
+
+  /task:
+    get:
+      summary: Origin and destination station
+      description: Retrieves the ids of the origin and destination station from which the shortest path has to be found.
+      operationId: getTask
+      tags:
+        - TASK
+      responses:
+        '200':
+          description: The ids of the origin and destination station.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+
+  /task/submit:
+    post:
+      summary: Submit
+      description: Submits the given shortest route and validates whether it indeed is the shortest route.
+      operationId: submit
+      tags:
+      - TASK
+      requestBody:
+        description: The stations that together form the shortest route.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Route'
+      responses:
+        '200':
+          description: The correctness of the submission.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubmissionResult'
+        '400':
+          description: Two subsequent stations on the route are not connected through a railway.
+        '404':
+          description: One of the stations on the route could not be found.
+
+components:
+  securitySchemes:
+    idKey:
+      type: apiKey
+      in: header
+      name: x-id-key
+
+  responses:
+    UnauthorizedError:
+      description: Missing identification key.
+      headers:
+        WWW_Authenticate:
+          schema:
+            type: string
+
+  schemas:
+    Station:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        lat:
+          type: number
+          format: double
+        lng:
+          type: number
+          format: double
+        connectedRailways:
+          type: array
+          items:
+            type: integer
+      required:
+      - id
+      - name
+      - lat
+      - lng
+      - connectedRailways
+      example:
+        id: 2600401
+        name: "Oi-machi"
+        lat: 35.607535
+        lng: 139.735025
+        connectedRailways: [11332, 26004, 99337]
+
+    Route:
+      type: object
+      properties:
+        stationsToSwitchTrain:
+          type: array
+          items:
+            type: integer
+      required:
+      - stationsToSwitch
+      example:
+        stationsToSwitchTrain: [2600319, 2600307, 2600408]
+
+    Railway:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        connectedStations:
+          type: array
+          items:
+            type: integer
+      required:
+      - id
+      - name
+      - connectedStations
+      example:
+        id: 99337
+        name: "Rinka Line"
+        connectedStations: [9933701, 9933702, 9933703, 9933704, 9933705, 9933706, 9933707, 9933708]
+
+    NameResponse:
+      type: object
+      properties:
+        name:
+          type: string
+      required:
+      - name
+      example:
+        name: "Yokohama"
+
+    DistanceResponse:
+      type: object
+      properties:
+        distance:
+          type: number
+          format: double
+      required:
+      - distance
+      example:
+        distance: 5230.208808147124
+
+    SubmissionResult:
+      type: string
+      enum:
+      - CORRECT
+      - ROUTE_TOO_LONG
+      - INCORRECT_ORIGIN
+      - INCORRECT_DESTINATION
+      example: CORRECT
+
+    Task:
+      type: object
+      properties:
+        origin:
+          type: integer
+        destination:
+          type: integer
+      required:
+        - origin
+        - destination
+      example:
+        origin: 2600319
+        destination: 2600408
+
+security:
+- idKey: []
+
+tags:
+- name: STATION
+- name: RAILWAY
+- name: TASK
+- name: DISTANCE
