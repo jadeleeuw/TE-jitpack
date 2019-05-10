@@ -20,11 +20,11 @@ Returns the railway with the given id.
 ### Example
 ```java
 // Import classes:
-//import sdk.serialization.ApiClient;
-//import sdk.serialization.ApiException;
-//import sdk.serialization.Configuration;
-//import sdk.serialization.auth.*;
-//import sdk.serialization.api.RailwayApi;
+//import sdk.railways.ApiClient;
+//import sdk.railways.ApiException;
+//import sdk.railways.Configuration;
+//import sdk.railways.auth.*;
+//import sdk.railways.api.RailwayApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -75,11 +75,11 @@ Returns all railways on the map.
 ### Example
 ```java
 // Import classes:
-//import sdk.serialization.ApiClient;
-//import sdk.serialization.ApiException;
-//import sdk.serialization.Configuration;
-//import sdk.serialization.auth.*;
-//import sdk.serialization.api.RailwayApi;
+//import sdk.railways.ApiClient;
+//import sdk.railways.ApiException;
+//import sdk.railways.Configuration;
+//import sdk.railways.auth.*;
+//import sdk.railways.api.RailwayApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -126,11 +126,11 @@ Returns the ids of all stations connected to the given railway.
 ### Example
 ```java
 // Import classes:
-//import sdk.serialization.ApiClient;
-//import sdk.serialization.ApiException;
-//import sdk.serialization.Configuration;
-//import sdk.serialization.auth.*;
-//import sdk.serialization.api.RailwayApi;
+//import sdk.railways.ApiClient;
+//import sdk.railways.ApiException;
+//import sdk.railways.Configuration;
+//import sdk.railways.auth.*;
+//import sdk.railways.api.RailwayApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 

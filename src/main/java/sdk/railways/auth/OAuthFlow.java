@@ -1,4 +1,4 @@
-package sdk.serialization.auth;
+package sdk.railways.auth;
 
 public enum OAuthFlow {
     accessCode, implicit, password, application

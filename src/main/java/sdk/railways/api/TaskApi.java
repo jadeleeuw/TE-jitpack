@@ -1,10 +1,10 @@
-package sdk.serialization.api;
+package sdk.railways.api;
 
-import sdk.serialization.ApiClient;
+import sdk.railways.ApiClient;
 
-import sdk.serialization.model.Route;
-import sdk.serialization.model.SubmissionResult;
-import sdk.serialization.model.Task;
+import sdk.railways.model.Route;
+import sdk.railways.model.SubmissionResult;
+import sdk.railways.model.Task;
 
 import java.util.HashMap;
 import java.util.List;
@@ -26,7 +26,7 @@ import org.springframework.http.MediaType;
 import reactor.core.publisher.Mono;
 import reactor.core.publisher.Flux;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-10T16:08:05.987300+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-10T16:25:12.093229+02:00[Europe/Amsterdam]")
 public class TaskApi {
     private ApiClient apiClient;
 

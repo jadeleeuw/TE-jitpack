@@ -18,11 +18,11 @@ Returns the given route with an added route identifier.
 ### Example
 ```java
 // Import classes:
-//import sdk.serialization.ApiClient;
-//import sdk.serialization.ApiException;
-//import sdk.serialization.Configuration;
-//import sdk.serialization.auth.*;
-//import sdk.serialization.api.RouteApi;
+//import sdk.railways.ApiClient;
+//import sdk.railways.ApiException;
+//import sdk.railways.Configuration;
+//import sdk.railways.auth.*;
+//import sdk.railways.api.RouteApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 

@@ -11,7 +11,7 @@
  */
 
 
-package sdk.serialization.model;
+package sdk.railways.model;
 
 import java.util.Objects;
 import java.util.Arrays;
@@ -22,29 +22,29 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * DistanceResponse
+ * NameResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-10T16:08:05.987300+02:00[Europe/Amsterdam]")
-public class DistanceResponse {
-  @JsonProperty("distance")
-  private Double distance;
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-10T16:25:12.093229+02:00[Europe/Amsterdam]")
+public class NameResponse {
+  @JsonProperty("name")
+  private String name;
 
-  public DistanceResponse distance(Double distance) {
-    this.distance = distance;
+  public NameResponse name(String name) {
+    this.name = name;
     return this;
   }
 
    /**
-   * Get distance
-   * @return distance
+   * Get name
+   * @return name
   **/
   @ApiModelProperty(required = true, value = "")
-  public Double getDistance() {
-    return distance;
+  public String getName() {
+    return name;
   }
 
-  public void setDistance(Double distance) {
-    this.distance = distance;
+  public void setName(String name) {
+    this.name = name;
   }
 
 
@@ -56,22 +56,22 @@ public class DistanceResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DistanceResponse distanceResponse = (DistanceResponse) o;
-    return Objects.equals(this.distance, distanceResponse.distance);
+    NameResponse nameResponse = (NameResponse) o;
+    return Objects.equals(this.name, nameResponse.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(distance);
+    return Objects.hash(name);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DistanceResponse {\n");
+    sb.append("class NameResponse {\n");
     
-    sb.append("    distance: ").append(toIndentedString(distance)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
     return sb.toString();
   }

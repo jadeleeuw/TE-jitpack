@@ -1,4 +1,4 @@
-package sdk.serialization;
+package sdk.railways;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -57,12 +57,12 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.TimeZone;
 
-import sdk.serialization.auth.Authentication;
-import sdk.serialization.auth.HttpBasicAuth;
-import sdk.serialization.auth.ApiKeyAuth;
-import sdk.serialization.auth.OAuth;
+import sdk.railways.auth.Authentication;
+import sdk.railways.auth.HttpBasicAuth;
+import sdk.railways.auth.ApiKeyAuth;
+import sdk.railways.auth.OAuth;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-10T16:08:05.987300+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-10T16:25:12.093229+02:00[Europe/Amsterdam]")
 public class ApiClient {
     public enum CollectionFormat {
         CSV(","), TSV("\t"), SSV(" "), PIPES("|"), MULTI(null);

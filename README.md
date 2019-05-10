@@ -2,7 +2,7 @@
 
 Railways API Game!
 - API version: 1.0
-  - Build date: 2019-05-10T16:08:05.987300+02:00[Europe/Amsterdam]
+  - Build date: 2019-05-10T16:25:12.093229+02:00[Europe/Amsterdam]
 
 Find your way in the Tokyo railway system!
 
@@ -72,10 +72,10 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 
-import sdk.serialization.*;
-import sdk.serialization.auth.*;
-import sdk.serialization.model.*;
-import sdk.serialization.api.DistanceApi;
+import sdk.railways.*;
+import sdk.railways.auth.*;
+import sdk.railways.model.*;
+import sdk.railways.api.DistanceApi;
 
 import java.io.File;
 import java.util.*;

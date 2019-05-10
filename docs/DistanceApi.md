@@ -19,11 +19,11 @@ Returns the distance (in meters) between two stations.
 ### Example
 ```java
 // Import classes:
-//import sdk.serialization.ApiClient;
-//import sdk.serialization.ApiException;
-//import sdk.serialization.Configuration;
-//import sdk.serialization.auth.*;
-//import sdk.serialization.api.DistanceApi;
+//import sdk.railways.ApiClient;
+//import sdk.railways.ApiException;
+//import sdk.railways.Configuration;
+//import sdk.railways.auth.*;
+//import sdk.railways.api.DistanceApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -76,11 +76,11 @@ Returns the total distance of the route in meters.
 ### Example
 ```java
 // Import classes:
-//import sdk.serialization.ApiClient;
-//import sdk.serialization.ApiException;
-//import sdk.serialization.Configuration;
-//import sdk.serialization.auth.*;
-//import sdk.serialization.api.DistanceApi;
+//import sdk.railways.ApiClient;
+//import sdk.railways.ApiException;
+//import sdk.railways.Configuration;
+//import sdk.railways.auth.*;
+//import sdk.railways.api.DistanceApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
