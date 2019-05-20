@@ -25,7 +25,7 @@ import org.springframework.http.MediaType;
 import reactor.core.publisher.Mono;
 import reactor.core.publisher.Flux;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-10T16:25:12.093229+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-20T11:55:06.369093+02:00[Europe/Amsterdam]")
 public class RailwayApi {
     private ApiClient apiClient;
 
@@ -114,15 +114,15 @@ public class RailwayApi {
         return apiClient.invokeFluxAPI(path, HttpMethod.GET, queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
-     * All station on railway
-     * Returns the ids of all stations connected to the given railway.
-     * <p><b>200</b> - All station ids connected to the railway.
+     * All stations on railway
+     * Returns all stations connected to the given railway.
+     * <p><b>200</b> - All stations connected to the railway.
      * <p><b>404</b> - The railway with the given id could not be found.
      * @param railwayId The id of the railway.
-     * @return Station
+     * @return List&lt;Station&gt;
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public Mono<Station> getStationsOnRailway(Integer railwayId) throws HttpClientErrorException {
+    public Flux<Station> getStationsOnRailway(Integer railwayId) throws HttpClientErrorException {
         Object postBody = null;
         
         // verify the required parameter 'railwayId' is set
@@ -149,6 +149,6 @@ public class RailwayApi {
         String[] authNames = new String[] { "idKey" };
 
         ParameterizedTypeReference<Station> returnType = new ParameterizedTypeReference<Station>() {};
-        return apiClient.invokeAPI(path, HttpMethod.GET, queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+        return apiClient.invokeFluxAPI(path, HttpMethod.GET, queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     }
 }

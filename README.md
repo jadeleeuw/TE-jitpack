@@ -2,7 +2,7 @@
 
 Railways API Game!
 - API version: 1.0
-  - Build date: 2019-05-10T16:25:12.093229+02:00[Europe/Amsterdam]
+  - Build date: 2019-05-20T11:55:06.369093+02:00[Europe/Amsterdam]
 
 Find your way in the Tokyo railway system!
 
@@ -116,7 +116,7 @@ Class | Method | HTTP request | Description
 *DistanceApi* | [**getDistanceOfRoute**](docs/DistanceApi.md#getDistanceOfRoute) | **POST** /distance/route | Distance of route
 *RailwayApi* | [**getRailway**](docs/RailwayApi.md#getRailway) | **GET** /railways/{railwayId} | Railway by id
 *RailwayApi* | [**getRailways**](docs/RailwayApi.md#getRailways) | **GET** /railways | All railways
-*RailwayApi* | [**getStationsOnRailway**](docs/RailwayApi.md#getStationsOnRailway) | **GET** /railways/{railwayId}/stations | All station on railway
+*RailwayApi* | [**getStationsOnRailway**](docs/RailwayApi.md#getStationsOnRailway) | **GET** /railways/{railwayId}/stations | All stations on railway
 *RouteApi* | [**addRouteIdentifier**](docs/RouteApi.md#addRouteIdentifier) | **POST** /route/create | Route identifier
 *StationApi* | [**getRailwaysConnectedToStation**](docs/StationApi.md#getRailwaysConnectedToStation) | **GET** /stations/{stationId}/railways | All railways on station
 *StationApi* | [**getStation**](docs/StationApi.md#getStation) | **GET** /stations | Station by id

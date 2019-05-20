@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * Route
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-10T16:25:12.093229+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-20T11:55:06.369093+02:00[Europe/Amsterdam]")
 public class Route {
   @JsonProperty("stationsToSwitchTrain")
   private List<Integer> stationsToSwitchTrain = null;

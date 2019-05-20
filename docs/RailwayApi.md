@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getRailway**](RailwayApi.md#getRailway) | **GET** /railways/{railwayId} | Railway by id
 [**getRailways**](RailwayApi.md#getRailways) | **GET** /railways | All railways
-[**getStationsOnRailway**](RailwayApi.md#getStationsOnRailway) | **GET** /railways/{railwayId}/stations | All station on railway
+[**getStationsOnRailway**](RailwayApi.md#getStationsOnRailway) | **GET** /railways/{railwayId}/stations | All stations on railway
 
 
 <a name="getRailway"></a>
@@ -117,11 +117,11 @@ This endpoint does not need any parameter.
 
 <a name="getStationsOnRailway"></a>
 # **getStationsOnRailway**
-> Station getStationsOnRailway(railwayId)
+> List&lt;Station&gt; getStationsOnRailway(railwayId)
 
-All station on railway
+All stations on railway
 
-Returns the ids of all stations connected to the given railway.
+Returns all stations connected to the given railway.
 
 ### Example
 ```java
@@ -143,7 +143,7 @@ idKey.setApiKey("YOUR API KEY");
 RailwayApi apiInstance = new RailwayApi();
 Integer railwayId = 56; // Integer | The id of the railway.
 try {
-    Station result = apiInstance.getStationsOnRailway(railwayId);
+    List<Station> result = apiInstance.getStationsOnRailway(railwayId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RailwayApi#getStationsOnRailway");
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Station**](Station.md)
+[**List&lt;Station&gt;**](Station.md)
 
 ### Authorization
 
