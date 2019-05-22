@@ -62,7 +62,7 @@ import sdk.railways.auth.HttpBasicAuth;
 import sdk.railways.auth.ApiKeyAuth;
 import sdk.railways.auth.OAuth;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-20T11:55:06.369093+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-22T11:48:24.124698+02:00[Europe/Amsterdam]")
 public class ApiClient {
     public enum CollectionFormat {
         CSV(","), TSV("\t"), SSV(" "), PIPES("|"), MULTI(null);

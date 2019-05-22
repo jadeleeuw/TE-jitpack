@@ -13,7 +13,7 @@
 
 package sdk.railways;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-20T11:55:06.369093+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-22T11:48:24.124698+02:00[Europe/Amsterdam]")
 public class StringUtil {
   /**
    * Check if the given array contains the given value (with case-insensitive comparison).

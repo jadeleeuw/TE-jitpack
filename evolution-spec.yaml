@@ -126,7 +126,31 @@ paths:
         '404':
           description: The station with the given name could not be found.
 
-  /stations:
+#  /stations:
+#    get:
+#      summary: Station by id
+#      description: Returns a station with the given id.
+#      operationId: getStation
+#      tags:
+#      - STATION
+#      parameters:
+#      - in: query
+#        name: station_id
+#        description: The id of the station.
+#        required: true
+#        schema:
+#          type: integer
+#      responses:
+#        '200':
+#          description: The station with the given id.
+#          content:
+#            application/json:
+#              schema:
+#                $ref: '#/components/schemas/Station'
+#        '404':
+#          description: The station with the given id could not be found.
+
+  /stations/{stationId}:
     get:
       summary: Station by id
       description: Returns a station with the given id.
@@ -134,8 +158,8 @@ paths:
       tags:
       - STATION
       parameters:
-      - in: query
-        name: station_id
+      - in: path
+        name: stationId
         description: The id of the station.
         required: true
         schema:
@@ -150,7 +174,7 @@ paths:
         '404':
           description: The station with the given id could not be found.
 
-  /stations/{stationId}/name:
+  /stations/name:
     get:
       summary: Name of station
       description: Gets the name of the station with the given id.
@@ -158,8 +182,8 @@ paths:
       tags:
       - STATION
       parameters:
-      - in: path
-        name: stationId
+      - in: query
+        name: station_id
         description: The id of the station.
         required: true
         schema:
@@ -173,6 +197,30 @@ paths:
                 $ref: '#/components/schemas/NameResponse'
         '404':
           description: The station with the given id could not be found.
+
+#  /stations/{stationId}/name:
+#    get:
+#      summary: Name of station
+#      description: Gets the name of the station with the given id.
+#      operationId: getStationName
+#      tags:
+#      - STATION
+#      parameters:
+#      - in: path
+#        name: stationId
+#        description: The id of the station.
+#        required: true
+#        schema:
+#          type: integer
+#      responses:
+#        '200':
+#          description: The name of the station with the given id.
+#          content:
+#            application/json:
+#              schema:
+#                $ref: '#/components/schemas/NameResponse'
+#        '404':
+#          description: The station with the given id could not be found.
 
   /stations/{stationId}/railways:
     get:
